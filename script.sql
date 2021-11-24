@@ -1,8 +1,11 @@
+DROP TABLE Approvisioner;
 DROP TABLE Fournisseur;
+DROP TABLE Existe;
 DROP TABLE Produit;
+DROP TABLE Categorie;
+DROP TABLE Achete;
 DROP TABLE Client;
 DROP TABLE Stock;
-DROP TABLE Categorie;
 DROP TABLE Magasin;
 
 CREATE TABLE Fournisseur(

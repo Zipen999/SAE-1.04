@@ -1,12 +1,12 @@
-DROP TABLE Approvisioner;
 DROP TABLE Fournisseur;
-DROP TABLE Existe;
 DROP TABLE Produit;
-DROP TABLE Categorie;
-DROP TABLE Achete;
 DROP TABLE Client;
 DROP TABLE Stock;
+DROP TABLE Categorie;
 DROP TABLE Magasin;
+DROP TABLE Existe;
+DROP TABLE Approvisione;
+DROP TABLE Achete;
 
 CREATE TABLE Fournisseur(
 	idFournisseur 	char(5) PRIMARY KEY,
@@ -66,5 +66,21 @@ CREATE TABLE Magasin(
 );
 
 CREATE TABLE Existe(
+	qte					numeric(5) NOT NULL,
+	FOREIGN KEY (idProduit) REFERENCES Produit,
+	FOREIGN KEY (idStock) REFERENCES Stock
+);
 
+CREATE TABLE Approvisione(
+	qte					numeric(5) NOT NULL,
+	date_Ap				date NOT NULL,
+	FOREIGN KEY (idFournisseur) REFERENCES Fournisseur,
+	FOREIGN KEY (idProduit) REFERENCES Produit
+);
+
+CREATE TABLE Achete(
+	date_ach			date NOT NULL,
+	FOREIGN KEY (idClient) REFERENCES Client,
+	FOREIGN KEY (idMagasin) REFERENCES Magasin,
+	FOREIGN KEY (idProduit) REFERENCES Produit
 );

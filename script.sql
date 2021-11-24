@@ -9,7 +9,7 @@ DROP TABLE Approvisione;
 DROP TABLE Achete;
 
 CREATE TABLE Fournisseur(
-	idFournisseur 	char(5) PRIMARY KEY,
+	idFournisseur 		char(5) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL,
 	rue 			varchar(30) NOT NULL,
 	ville 			varchar(40) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE Produit(
 	idProduit 		char(5) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL,
 	type 			varchar(30) NOT NULL,
-	taille 			numeric(1,2) NOT NULL,
+	taille 			varchar(3) NOT NULL,
 	marque 			varchar(30) NOT NULL,
 	prix 			numeric(5,2) NOT NULL,
 	FOREIGN KEY (idCategorie) REFERENCES Categorie
@@ -33,7 +33,7 @@ CREATE TABLE Client(
 	idClient 			char(5) PRIMARY KEY,
 	nom 				varchar(30) NOT NULL,
 	prenom 				varchar(30) NOT NULL,
-	date_naissance 		date NOT NULL,
+	date_naissance 			date NOT NULL,
 	rue 				varchar(30) NOT NULL,
 	ville 				varchar(30) NOT NULL,
 	codeP 				numeric(5) NOT NULL,
@@ -43,16 +43,16 @@ CREATE TABLE Client(
 );
 
 CREATE TABLE Stock(
-	idStock 				char(5) PRIMARY KEY,
-	capacite	 			numeric(5) NOT NULL,
-	pays 					varchar(30) NOT NULL,
-	rue 					varchar(30) NOT NULL,
-	ville 					varchar(30) NOT NULL
+	idStock 			char(5) PRIMARY KEY,
+	capacite	 		numeric(5) NOT NULL,
+	pays 				varchar(30) NOT NULL,
+	rue 				varchar(30) NOT NULL,
+	ville 				varchar(30) NOT NULL
 );
 
 CREATE TABLE Categorie(
-	idCategorie				char(5) PRIMARY KEY,
-	nom  					varchar(30) UNIQUE NOT NULL
+	idCategorie			char(5) PRIMARY KEY,
+	nom  				varchar(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE Magasin(
@@ -66,13 +66,13 @@ CREATE TABLE Magasin(
 );
 
 CREATE TABLE Existe(
-	qte					numeric(5) NOT NULL,
+	qte				numeric(5) NOT NULL,
 	FOREIGN KEY (idProduit) REFERENCES Produit,
 	FOREIGN KEY (idStock) REFERENCES Stock
 );
 
 CREATE TABLE Approvisione(
-	qte					numeric(5) NOT NULL,
+	qte				numeric(5) NOT NULL,
 	date_Ap				date NOT NULL,
 	FOREIGN KEY (idFournisseur) REFERENCES Fournisseur,
 	FOREIGN KEY (idProduit) REFERENCES Produit

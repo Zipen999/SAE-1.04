@@ -10,7 +10,7 @@ DROP TABLE Categorie;
 
 
 CREATE TABLE Categorie(
-	idCategorie				char(5) PRIMARY KEY,
+	idCategorie				char(3) PRIMARY KEY,
 	nom  					varchar(30) UNIQUE NOT NULL,
 	CONSTRAINT ck_categorie CHECK (nom IN('Foot','Rugby','Natation','Boxe','Hokey','Tennis'))
 );
@@ -22,22 +22,22 @@ CREATE TABLE Produit(
 	taille 			varchar(3) NOT NULL CONSTRAINT ck_taille CHECK ((type !='Chaussure' AND taille IN('S','M','L','XL','XXL')) OR (type ='Chaussure' AND taille >= '16' AND taille <= '55')),
 	marque 			varchar(30) NOT NULL,
 	prix 			numeric(5,2) NOT NULL CONSTRAINT ck_prix CHECK ( prix > 0),
-	categorie 		char(5),
+	categorie 		char(3),
 	CONSTRAINT fk_categorie FOREIGN KEY (categorie) REFERENCES Categorie(idCategorie)
 );
 
 CREATE TABLE Magasin(
-	idMagasin			char(5) PRIMARY KEY,
+	idMagasin			char(3) PRIMARY KEY,
 	rue 				varchar(30),
 	ville				varchar(40),
 	codeP				numeric(5),
 	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
-	tel 				numeric(15) UNIQUE NOT NULL,
+	tel 				varchar UNIQUE NOT NULL,
 	email 				varchar(45) UNIQUE
 );
 
 CREATE TABLE Client(
-	idClient 			char(5) PRIMARY KEY,
+	idClient 			char(3) PRIMARY KEY,
 	nom 				varchar(30) NOT NULL,
 	prenom 				varchar(30) NOT NULL,
 	date_naissance 		date NOT NULL,
@@ -45,14 +45,15 @@ CREATE TABLE Client(
 	ville 				varchar(30),
 	codeP 				numeric(5),
 	pays 				varchar(30) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
-	tel 				numeric(10) UNIQUE NOT NULL,
+	tel 				varchar UNIQUE NOT NULL,
 	email				varchar(45) UNIQUE
 );
 
 CREATE TABLE Achete(
 	date_achat	date NOT NULL,
-	client		char(5),
-	magasin 	char(5),
+	Quantite	numeric(5) Default(1) CONSTRAINT ck_qtte CHECK (quantite >0),
+	client		char(3),
+	magasin 	char(3),
 	produit 	char(5),
 	CONSTRAINT fk_client FOREIGN KEY (client) REFERENCES Client(idClient),
 	CONSTRAINT fk_magasin FOREIGN KEY (magasin) REFERENCES Magasin(idMagasin),
@@ -62,10 +63,10 @@ CREATE TABLE Achete(
 CREATE TABLE Stock(
 	idStock 				char(5) PRIMARY KEY,
 	capacite	 			numeric(5) NOT NULL CONSTRAINT ck_cap CHECK (capacite >0),
-	rue 					varchar(30),
-	ville 					varchar(30),
-	codeP 					numeric(5),
-	pays 					varchar(30) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL))
+	rue 					varchar(30) NOT NULL,
+	ville 					varchar(30) NOT NULL,
+	codeP 					numeric(5) NOT NULL,
+	pays 					varchar(30) NOT NULL
 );
 
 CREATE TABLE Existe(
@@ -77,20 +78,20 @@ CREATE TABLE Existe(
 );
 
 CREATE TABLE Fournisseur(
-	idFournisseur 	char(5) PRIMARY KEY,
+	idFournisseur 	char(3) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL,
 	rue 			varchar(30),
 	ville 			varchar(40),
 	codeP			numeric(5),
 	pays 			varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
-	tel 			numeric(10) UNIQUE NOT NULL,
+	tel 			varchar UNIQUE NOT NULL,
 	email			varchar(45) UNIQUE
 );
 
 CREATE TABLE Approvisioner(
 	quantite			numeric(5) NOT NULL CONSTRAINT ck_qtte CHECK (quantite >0),
 	date_appro			date NOT NULL,
-	fournisseur			char(5),
+	fournisseur			char(3),
 	produit				char(5),
 	CONSTRAINT fk_fourni FOREIGN KEY (fournisseur) REFERENCES Fournisseur(idFournisseur),
 	CONSTRAINT fk_prod_ap FOREIGN KEY (produit) REFERENCES Produit(idProduit)

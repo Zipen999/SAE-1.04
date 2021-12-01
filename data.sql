@@ -5,26 +5,26 @@ INSERT INTO Categorie VALUES ('C04', 'Boxe');
 INSERT INTO Categorie VALUES ('C05', 'Hockey');
 INSERT INTO Categorie VALUES ('C06', 'Tennis');
 
-INSERT INTO Produit VALUES ('P0001', 'Casque de hockey', 'Tête', 'M', 'CCM', '59,99', 'C05');
-INSERT INTO Produit VALUES ('P0002', 'Bonnet de bain', 'Tête', 'S', 'Arena', '19,99', 'C03');
-INSERT INTO Produit VALUES ('P0003', 'Maillot de foot', 'Haut', 'L', 'Nike', '39,99', 'C01');
-INSERT INTO Produit VALUES ('P0004', 'Maillot de rugby', 'Haut', 'L', 'Coq Sportif', '39,99', 'C02' );
-INSERT INTO Produit VALUES ('P0005', 'T-Shirt', 'Haut', 'M', 'Adidas', '9,99', 'C06');
-INSERT INTO Produit VALUES ('P0006', 'Short de foot', 'Bas', 'S', 'Puma', '19,99', 'C01');
-INSERT INTO Produit VALUES ('P0007', 'Short de rugby', 'Bas', 'S', 'Gilbert', '19,99', 'C02');
-INSERT INTO Produit VALUES ('P0008', 'Maillot de bain', 'Bas', 'M', 'Commas', '29,99', 'C03');
-INSERT INTO Produit VALUES ('P0009', 'Short de boxe', 'Bas', 'XL', 'Venum', '39,99', 'C04');
-INSERT INTO Produit VALUES ('P0010', 'Pantalon de hockey', 'Bas', 'L', 'Korok', '49,99', 'C05');
-INSERT INTO Produit VALUES ('P0011', 'Short de tennis', 'Bas', 'M', 'Nike', '39,99', 'C06');
-INSERT INTO Produit VALUES ('P0012', 'Crampons de foot', 'Chaussure', '41', 'Adidas', '79,99', 'C01');
-INSERT INTO Produit VALUES ('P0013', 'Crampons de rugby', 'Chaussure', '45', 'Nike', '89,99', 'C02');
-INSERT INTO Produit VALUES ('P0014', 'Patins', 'Chaussure', '39', 'Impala', '99,99', 'C05');
-INSERT INTO Produit VALUES ('P0015', 'Baskets', 'Chaussure', '43', 'Puma', '69,99', 'C06');
-INSERT INTO Produit VALUES ('P0016', 'Gants de gardien', 'Accessoire', 'XXL', 'Orzale', '59,99', 'C01');
-INSERT INTO Produit VALUES ('P0017', 'Lunettes de piscine', 'Accessoire', 'S', 'Speedo', '29,99', 'C03');
-INSERT INTO Produit VALUES ('P0018', 'Gants de boxe', 'Accessoire', 'M', 'Century', '39,99', 'C04');
-INSERT INTO Produit VALUES ('P0019', 'Crosse de hockey', 'Accessoire', 'L', 'CCM', '79,99', 'C05');
-INSERT INTO Produit VALUES ('P0020', 'Raquette de tennis', 'Accessoire', 'XL', 'Wilson', '89,99', 'C06');
+INSERT INTO Produit VALUES ('P0001', 'Casque de hockey', 'Tête', 'M', 'CCM', '59.99', 'C05');
+INSERT INTO Produit VALUES ('P0002', 'Bonnet de bain', 'Tête', 'S', 'Arena', '19.99', 'C03');
+INSERT INTO Produit VALUES ('P0003', 'Maillot de foot', 'Haut', 'L', 'Nike', '39.99', 'C01');
+INSERT INTO Produit VALUES ('P0004', 'Maillot de rugby', 'Haut', 'L', 'Coq Sportif', '39.99', 'C02' );
+INSERT INTO Produit VALUES ('P0005', 'T-Shirt', 'Haut', 'M', 'Adidas', '9.99', 'C06');
+INSERT INTO Produit VALUES ('P0006', 'Short de foot', 'Bas', 'S', 'Puma', '19.99', 'C01');
+INSERT INTO Produit VALUES ('P0007', 'Short de rugby', 'Bas', 'S', 'Gilbert', '19.99', 'C02');
+INSERT INTO Produit VALUES ('P0008', 'Maillot de bain', 'Bas', 'M', 'Commas', '29.99', 'C03');
+INSERT INTO Produit VALUES ('P0009', 'Short de boxe', 'Bas', 'XL', 'Venum', '39.99', 'C04');
+INSERT INTO Produit VALUES ('P0010', 'Pantalon de hockey', 'Bas', 'L', 'Korok', '49.99', 'C05');
+INSERT INTO Produit VALUES ('P0011', 'Short de tennis', 'Bas', 'M', 'Nike', '39.99', 'C06');
+INSERT INTO Produit VALUES ('P0012', 'Crampons de foot', 'Chaussure', '41', 'Adidas', '79.99', 'C01');
+INSERT INTO Produit VALUES ('P0013', 'Crampons de rugby', 'Chaussure', '45', 'Nike', '89.99', 'C02');
+INSERT INTO Produit VALUES ('P0014', 'Patins', 'Chaussure', '39', 'Impala', '99.99', 'C05');
+INSERT INTO Produit VALUES ('P0015', 'Baskets', 'Chaussure', '43', 'Puma', '69.99', 'C06');
+INSERT INTO Produit VALUES ('P0016', 'Gants de gardien', 'Accessoire', 'XXL', 'Orzale', '59.99', 'C01');
+INSERT INTO Produit VALUES ('P0017', 'Lunettes de piscine', 'Accessoire', 'S', 'Speedo', '29.99', 'C03');
+INSERT INTO Produit VALUES ('P0018', 'Gants de boxe', 'Accessoire', 'M', 'Century', '39.99', 'C04');
+INSERT INTO Produit VALUES ('P0019', 'Crosse de hockey', 'Accessoire', 'L', 'CCM', '79.99', 'C05');
+INSERT INTO Produit VALUES ('P0020', 'Raquette de tennis', 'Accessoire', 'XL', 'Wilson', '89.99', 'C06');
 
 INSERT INTO Magasin VALUES ('M0001', 'Zone Commerciale La Pardieu', 'Clermont-Ferrand', '63000', 'France', '+33473273614', 'ecouteclients@farnex.com');
 INSERT INTO Magasin VALUES ('M0002', 'Belgique', '+32756234576', 'ecouteclientsbelgique@farnex.com');
@@ -61,3 +61,5 @@ INSERT INTO Approvisioner(quantite,date_appro,fournisseur,produit) VALUES (250,'
 INSERT INTO Approvisioner(quantite,date_appro,fournisseur,produit) VALUES (10,'02/12/2021','F51','P0003');
 INSERT INTO Approvisioner(quantite,date_appro,fournisseur,produit) VALUES (600,'16/05/2021','F99','P0004');
 
+
+/*SELECT * FROM produit WHERE prix*0.75;*/

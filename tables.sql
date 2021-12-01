@@ -53,7 +53,7 @@ CREATE TABLE Achete(
 	date_achat	date NOT NULL,
 	Quantite	numeric(5) Default(1) CONSTRAINT ck_qtte CHECK (quantite >0),
 	client		char(3),
-	magasin 	char(3),
+	magasin 	char(5),
 	produit 	char(5),
 	CONSTRAINT fk_client FOREIGN KEY (client) REFERENCES Client(idClient),
 	CONSTRAINT fk_magasin FOREIGN KEY (magasin) REFERENCES Magasin(idMagasin),

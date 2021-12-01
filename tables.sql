@@ -19,7 +19,7 @@ CREATE TABLE Produit(
 	idProduit 		char(5) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL UNIQUE,
 	type 			varchar(30) NOT NULL CONSTRAINT ck_type CHECK (type IN('Tête','Haut','Bas','Chaussure','Accessoire')),
-	taille 			varchar(3) NOT NULL CONSTRAINT ck_taille CHECK (type !='Chaussure' AND taille IN('S','M','L','XL','XXL')) OR (type ='Chaussure' AND taille >= 16 AND taille <= 55),
+	taille 			varchar(3) NOT NULL CONSTRAINT ck_taille CHECK ((type !='Chaussure' AND taille IN('S','M','L','XL','XXL')) OR (type ='Chaussure' AND taille >= '16' AND taille <= '55')),
 	marque 			varchar(30) NOT NULL,
 	prix 			numeric(5,2) NOT NULL CONSTRAINT ck_prix CHECK ( prix > 0),
 	categorie 		char(5),
@@ -44,7 +44,7 @@ CREATE TABLE Client(
 	rue 				varchar(30),
 	ville 				varchar(30),
 	codeP 				numeric(5),
-	pays 				varchar(30) NOT NULL CONSTRAINT ck_pays,
+	pays 				varchar(30) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
 	tel 				numeric(10) UNIQUE NOT NULL,
 	email				varchar(45) UNIQUE
 );
@@ -65,7 +65,7 @@ CREATE TABLE Stock(
 	rue 					varchar(30),
 	ville 					varchar(30),
 	codeP 					numeric(5),
-	pays 					varchar(30) NOT NULL CONSTRAINT ck_pays
+	pays 					varchar(30) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL))
 );
 
 CREATE TABLE Existe(
@@ -82,7 +82,7 @@ CREATE TABLE Fournisseur(
 	rue 			varchar(30),
 	ville 			varchar(40),
 	codeP			numeric(5),
-	pays 			varchar(42) NOT NULL CONSTRAINT ck_pays,
+	pays 			varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
 	tel 			numeric(10) UNIQUE NOT NULL,
 	email			varchar(45) UNIQUE
 );

@@ -42,7 +42,7 @@ INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/20
 INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('01/12/2021',NULL,'C04','M0004','P0015');
 
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO99',10000,'16 Rue maurice de vlaminck','Paris','75000','France');
-INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue maurice de vlaminck','Paris','75000','France');
+INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue Charles de gaules','Paris','75000','France');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO77',500,'977 Sussex Court','Amsterdam','79912','Netherlands');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO66',10500,'Obere Bahnhofstrasse 80','Bellinzona','6503','Switzerland');
 

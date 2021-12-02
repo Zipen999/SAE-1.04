@@ -72,7 +72,7 @@ CREATE TABLE Entrepot(
 CREATE TABLE Existe(
 	quantite			numeric(5) NOT NULL CONSTRAINT ck_qtte CHECK (quantite >0),
 	produit				char(5),
-	entrepot				char(5),
+	entrepot			char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
 	CONSTRAINT fk_entrepot FOREIGN KEY (entrepot) REFERENCES Entrepot(idEntrepot)
 );

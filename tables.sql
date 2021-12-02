@@ -37,10 +37,10 @@ CREATE TABLE Magasin(
 );
 
 CREATE TABLE Client(
-	idClient 			char(3) PRIMARY KEY,
+	idClient 			char(5) PRIMARY KEY,
 	nom 				varchar(30) NOT NULL,
 	prenom 				varchar(30) NOT NULL,
-	date_naissance 			date NOT NULL,
+	date_naissance 		date NOT NULL,
 	rue 				varchar(30),
 	ville				varchar(40),
 	codeP				numeric(5),
@@ -51,8 +51,8 @@ CREATE TABLE Client(
 
 CREATE TABLE Achete(
 	date_achat	date NOT NULL,
-	quantite	numeric(5) Default(1) CONSTRAINT ck_qtte CHECK (quantite >0),
-	client		char(3),
+	quantite	numeric(5) Default 1 CONSTRAINT ck_qtte CHECK (quantite >0),
+	client		char(5),
 	magasin 	char(5),
 	produit 	char(5),
 	CONSTRAINT fk_client FOREIGN KEY (client) REFERENCES Client(idClient),
@@ -70,15 +70,15 @@ CREATE TABLE Entrepot(
 );
 
 CREATE TABLE Existe(
-	quantite			numeric(5) NOT NULL,
+	quantite			numeric(5) NOT NULL CONSTRAINT ck_qtte CHECK (quantite >0),
 	produit				char(5),
-	entrepot			char(5),
+	entrepot				char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
 	CONSTRAINT fk_entrepot FOREIGN KEY (entrepot) REFERENCES Entrepot(idEntrepot)
 );
 
 CREATE TABLE Fournisseur(
-	idFournisseur 		char(3) PRIMARY KEY,
+	idFournisseur 	char(3) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL,
 	rue 			varchar(30),
 	ville 			varchar(40),

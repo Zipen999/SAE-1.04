@@ -35,6 +35,7 @@ INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,e
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL002','Charles','Thompson','03/07/1979','515 Renard Obr','Bordeaux',33800,'France','+33758604892','jennie2003@gmail.com');
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL003','Paul','Whorton','02/10/1973','3918 Davis Street',NULL,30606,'USA','706-372-8624','jamarcus_mclaughl@gmail.com');
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL004','Edward','Pitts','09/06/1972',NULL,NULL,NULL,'Germany','+49 50 96565789',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL005','Gérard','Romain','09/12/2000','05 Avenue du roussillon','Aubière',63170,'France','+3358604852',NULL);
 
 INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('26/05/2021','CL001','M0001','P0010');
 INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('20/01/2021',3,'CL002','M0002','P0001');

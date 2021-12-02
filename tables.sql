@@ -1,7 +1,7 @@
 DROP TABLE Approvisioner;
 DROP TABLE Fournisseur;
 DROP TABLE Existe;
-DROP TABLE Stock;
+DROP TABLE Entrepot;
 DROP TABLE Achete;
 DROP TABLE Client;
 DROP TABLE Magasin;
@@ -60,8 +60,8 @@ CREATE TABLE Achete(
 	CONSTRAINT fk_prod_ach FOREIGN KEY (produit) REFERENCES Produit(idProduit)
 );
 
-CREATE TABLE Stock(
-	idStock 				char(5) PRIMARY KEY,
+CREATE TABLE Entrepot(
+	idEntrepot 				char(5) PRIMARY KEY,
 	capacite	 			numeric(5) NOT NULL CONSTRAINT ck_cap CHECK (capacite >0),
 	rue 					varchar(30) NOT NULL,
 	ville 					varchar(30) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE Existe(
 	produit				char(5),
 	stock				char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
-	CONSTRAINT fk_stock FOREIGN KEY (stock) REFERENCES Stock(idStock)
+	CONSTRAINT fk_stock FOREIGN KEY (stock) REFERENCES Entrepot(idEntrepot)
 );
 
 CREATE TABLE Fournisseur(

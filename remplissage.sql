@@ -26,9 +26,9 @@ INSERT INTO Produit VALUES ('P0018', 'Gants de boxe', 'Accessoire', 'M', 'Centur
 INSERT INTO Produit VALUES ('P0019', 'Crosse de hockey', 'Accessoire', 'L', 'CCM', '79.99', 'C05');
 INSERT INTO Produit VALUES ('P0020', 'Raquette de tennis', 'Accessoire', 'XL', 'Wilson', '89.99', 'C06');
 
-INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0001','Zone Commerciale La Pardieu','Clermont-Ferrand',63000,'France', '+33473273614', 'ecouteclients@farnex.com');
+INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0001','Zone Commerciale La Pardieu','Aubière',63170,'France', '+33473273614', 'ecouteclientsAubière@farnex.com');
 INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0002',NULL,NULL,NULL,'Belgique','+32756234576','ecouteclientsbelgique@farnex.com');
-INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0003','Centre Commercial La Pardieu','Clermont-Ferrand',63000, 'France', '+33473285334', 'ecouteclients@farnex.com');
+INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0003','Centre Commercial La Pardieu','Clermont-Ferrand',63000, 'France', '+33473285334', 'ecouteclientsClermont@farnex.com');
 INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0004',NULL,'Québec',NULL,'Canada','+1-418-555-0151','ecouteclientsquebec@farnex.com');
 
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('C01','Douglas','Chiodo','06/08/2002',NULL,NULL,NULL,'USA','405-629-7465',NULL);
@@ -36,20 +36,20 @@ INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,e
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('C03','Paul','Whorton','02/10/1973','3918 Davis Street',NULL,30606,'USA','706-372-8624','jamarcus_mclaughl@gmail.com');
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('C04','Edward','Pitts','09/06/1972',NULL,NULL,NULL,'Germany','+49 50 96565789',NULL);
 
-INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/2021',NULL,'C01','M30','P0010');
-INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('20/01/2021',3,'C02','M20','P0001');
-INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/2021',2,'C03','M10','P0002');
-INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('01/12/2021',NULL,'C04','M01','P0015');
+INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/2021',NULL,'C01','M0001','P0010');
+INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('20/01/2021',3,'C02','M0002','P0001');
+INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/2021',2,'C03','M0003','P0002');
+INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('01/12/2021',NULL,'C04','M0004','P0015');
 
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO99',10000,'16 Rue maurice de vlaminck','Paris','75000','France');
-INSERT INTO Entrepot(iEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue maurice de vlaminck','Paris','75000','France');
+INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue maurice de vlaminck','Paris','75000','France');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO77',500,'977 Sussex Court','Amsterdam','79912','Netherlands');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO66',10500,'Obere Bahnhofstrasse 80','Bellinzona','6503','Switzerland');
 
-INSERT INTO Existe(quantite,produit,stock) VALUES (450,'P0001','STO99');
-INSERT INTO Existe(quantite,produit,stock) VALUES (250,'P0002','STO88');
-INSERT INTO Existe(quantite,produit,stock) VALUES (0,'P0003','STO77');
-INSERT INTO Existe(quantite,produit,stock) VALUES (900,'P0004','STO66');
+INSERT INTO Existe(quantite,produit,entrepot) VALUES (450,'P0001','STO99');
+INSERT INTO Existe(quantite,produit,entrepot) VALUES (250,'P0002','STO88');
+INSERT INTO Existe(quantite,produit,entrepot) VALUES (0,'P0003','STO77');
+INSERT INTO Existe(quantite,produit,entrepot) VALUES (900,'P0004','STO66');
 
 INSERT INTO Fournisseur(idFournisseur,nom,rue,ville,codeP,pays,tel,email) VALUES ('F99','Nike Supplies',NULL,'Berlin',NULL,'Germany','+49 30 614297658',NULL);
 INSERT INTO Fournisseur(idFournisseur,nom,rue,ville,codeP,pays,tel,email) VALUES ('F51','Adidas Inter','12-18 Rue des Grandes Arcades','Strasbourg',67000,'France','+33-805-101-080',NULL);

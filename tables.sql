@@ -12,7 +12,7 @@ DROP TABLE Categorie;
 CREATE TABLE Categorie(
 	idCategorie				char(3) PRIMARY KEY,
 	nom  					varchar(30) UNIQUE NOT NULL,
-	CONSTRAINT ck_categorie CHECK (nom IN('Foot','Rugby','Natation','Boxe','Hokey','Tennis'))
+	CONSTRAINT ck_categorie CHECK (nom IN('Foot','Rugby','Natation','Boxe','Hockey','Tennis'))
 );
 
 CREATE TABLE Produit(
@@ -27,11 +27,11 @@ CREATE TABLE Produit(
 );
 
 CREATE TABLE Magasin(
-	idMagasin			char(3) PRIMARY KEY,
+	idMagasin			char(5) PRIMARY KEY,
 	rue 				varchar(30),
 	ville				varchar(40),
 	codeP				numeric(5),
-	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
+	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NULL)),
 	tel 				varchar UNIQUE NOT NULL,
 	email 				varchar(45) UNIQUE
 );
@@ -42,16 +42,16 @@ CREATE TABLE Client(
 	prenom 				varchar(30) NOT NULL,
 	date_naissance 		date NOT NULL,
 	rue 				varchar(30),
-	ville 				varchar(30),
-	codeP 				numeric(5),
-	pays 				varchar(30) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
+	ville				varchar(40),
+	codeP				numeric(5),
+	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NULL)),
 	tel 				varchar UNIQUE NOT NULL,
 	email				varchar(45) UNIQUE
 );
 
 CREATE TABLE Achete(
 	date_achat	date NOT NULL,
-	Quantite	numeric(5) Default(1) CONSTRAINT ck_qtte CHECK (quantite >0),
+	quantite	numeric(5) Default(1) CONSTRAINT ck_qtte CHECK (quantite >0),
 	client		char(3),
 	magasin 	char(5),
 	produit 	char(5),
@@ -72,9 +72,9 @@ CREATE TABLE Entrepot(
 CREATE TABLE Existe(
 	quantite			numeric(5) NOT NULL,
 	produit				char(5),
-	stock				char(5),
+	entrepot				char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
-	CONSTRAINT fk_stock FOREIGN KEY (stock) REFERENCES Entrepot(idEntrepot)
+	CONSTRAINT fk_entrepot FOREIGN KEY (entrepot) REFERENCES Entrepot(idEntrepot)
 );
 
 CREATE TABLE Fournisseur(
@@ -83,7 +83,7 @@ CREATE TABLE Fournisseur(
 	rue 			varchar(30),
 	ville 			varchar(40),
 	codeP			numeric(5),
-	pays 			varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NOT NULL)),
+	pays 			varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NULL)),
 	tel 			varchar UNIQUE NOT NULL,
 	email			varchar(45) UNIQUE
 );

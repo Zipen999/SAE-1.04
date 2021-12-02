@@ -40,7 +40,7 @@ CREATE TABLE Client(
 	idClient 			char(3) PRIMARY KEY,
 	nom 				varchar(30) NOT NULL,
 	prenom 				varchar(30) NOT NULL,
-	date_naissance 		date NOT NULL,
+	date_naissance 			date NOT NULL,
 	rue 				varchar(30),
 	ville				varchar(40),
 	codeP				numeric(5),
@@ -72,13 +72,13 @@ CREATE TABLE Entrepot(
 CREATE TABLE Existe(
 	quantite			numeric(5) NOT NULL,
 	produit				char(5),
-	entrepot				char(5),
+	entrepot			char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
 	CONSTRAINT fk_entrepot FOREIGN KEY (entrepot) REFERENCES Entrepot(idEntrepot)
 );
 
 CREATE TABLE Fournisseur(
-	idFournisseur 	char(3) PRIMARY KEY,
+	idFournisseur 		char(3) PRIMARY KEY,
 	nom 			varchar(30) NOT NULL,
 	rue 			varchar(30),
 	ville 			varchar(40),

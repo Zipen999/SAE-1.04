@@ -37,6 +37,8 @@ INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,r
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,region,email) VALUES ('CL004','Edward','Pitts','09/06/1972',NULL,NULL,NULL,'Germany','+49 50 96565789','UE',NULL);
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL005','Gérard','Romain','09/12/2000','05 Avenue du roussillon','Aubière',63170,'Auvergne','France','+3358604852','FR',NULL);
 INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL006','Elisa','Pierro','02/05/1999','10 Place de Jaude','Clermont-Ferrand',63170,'Auvergne','France','+3376859725','FR',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL007','Jean','Dupont','06/09/1975','18 rue des myrtilles','Arras',63170,'NOrd-Pas-De-Calais','France','+3375842255','FR',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL008','Charles','Boulau','01/12/1964','118 Place des frites','Bruxelles',,'','Belgique','+3245859725','BE',NULL);
 
 INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('26/05/2021','CL001','M0001','P0010');
 INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('20/01/2021',3,'CL002','M0002','P0001');
@@ -47,7 +49,7 @@ INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('01/12/2021','CL00
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO99',10000,'16 Rue maurice de vlaminck','Paris','75000','France');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue Charles de gaules','Paris','75000','France');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO77',500,'977 Sussex Court','Amsterdam','79912','Netherlands');
-INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO66',10500,'Obere Bahnhofstrasse 80','Bellinzona','6503','Switzerland');
+INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO66',10500,'Obere Bahnhofstrasse 80','Bellinzona','65083','Switzerland');
 
 INSERT INTO Existe(quantite,produit,entrepot) VALUES (450,'P0001','STO99');
 INSERT INTO Existe(quantite,produit,entrepot) VALUES (250,'P0002','STO88');

@@ -3,15 +3,15 @@
 
 2.  Nous avons 2 types de données les données qui sont en liens avec les clients tels que les commandes ou encore leurs données, et les données de nos produits.
     Pour les données des clients :
-    ce sont des données personelles ,car on peut directement identifier de qui provient ces données, ce sont des données structurées elles peuvent être classées,
+    ce sont des données personnelles ,car on peut directement identifier de qui provient ces données, ce sont des données structurées elles peuvent être classées,
     ou triées par groupe avec des liens entre elles. Ce sont des données fournies par l'utilisateur, elles sont acquises auprès d'autres acteurs économiques.
     Pour les données de nos produits :
-    ce sont des données non personelles , car on ne peut pas identifier de qui provien ces données, ce sont des données structurées commme celles des clients
+    ce sont des données non personnelles , car on ne peut pas identifier de qui provien ces données, ce sont des données structurées comme celles des clients
     elles peuvent être triées et regrouper par un lien entre elles. Ce sont des données fournies par les fournisseurs , elles sont acquises auprès d'autres
     acteurs économiques.
 
-3.  Notre entreprise reçoit des données des fournisseurs comme la quantité fournit, on les traîte, les stocks, les partages pour que les clients sur internet 
-    puissent voir si il reste de la quantité , ensuite on les analise pour savoir ce qui a le plus été vendu et savoir ce que l'on doit commander de nouveau,
+3.  Notre entreprise reçoit des données des fournisseurs comme la quantité fournit, on les traite, les stocks, les partages pour que les clients sur internet 
+    puissent voir si il reste de la quantité , ensuite on les analyse pour savoir ce qui a le plus été vendu et savoir ce que l'on doit commander de nouveau,
     En amont des données on a les fournisseurs de nos produits, en aval il y a l'entreprise qui gère les serveurs et gardent les archives de nos données.
 
 4.

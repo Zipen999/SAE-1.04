@@ -31,16 +31,18 @@ INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0002',NU
 INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0003','Centre Commercial La Pardieu','Clermont-Ferrand',63000, 'France', '+33473285334', 'ecouteclientsClermont@farnex.com');
 INSERT INTO Magasin(idMagasin,rue,ville,codeP,pays,tel,email) VALUES ('M0004',NULL,'Québec',NULL,'Canada','+1-418-555-0151','ecouteclientsquebec@farnex.com');
 
-INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL001','Douglas','Chiodo','06/08/2002',NULL,NULL,NULL,'USA','405-629-7465',NULL);
-INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL002','Charles','Thompson','03/07/1979','515 Renard Obr','Bordeaux',33800,'France','+33758604892','jennie2003@gmail.com');
-INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL003','Paul','Whorton','02/10/1973','3918 Davis Street',NULL,30606,'USA','706-372-8624','jamarcus_mclaughl@gmail.com');
-INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL004','Edward','Pitts','09/06/1972',NULL,NULL,NULL,'Germany','+49 50 96565789',NULL);
-INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,email) VALUES ('CL005','Gérard','Romain','09/12/2000','05 Avenue du roussillon','Aubière',63170,'France','+3358604852',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,region,email) VALUES ('CL001','Douglas','Chiodo','06/08/2002',NULL,NULL,NULL,'USA','405-629-7465','horsUE',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL002','Charles','Thompson','03/07/1979','515 Renard Obr','Bordeaux',33800,'Gironde','France','+33758604892','FR','jennie2003@gmail.com');
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,region,email) VALUES ('CL003','Paul','Whorton','02/10/1973','3918 Davis Street',NULL,30606,'USA','706-372-8624','horsUE','jamarcus_mclaughl@gmail.com');
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,pays,tel,region,email) VALUES ('CL004','Edward','Pitts','09/06/1972',NULL,NULL,NULL,'Germany','+49 50 96565789','UE',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL005','Gérard','Romain','09/12/2000','05 Avenue du roussillon','Aubière',63170,'Auvergne','France','+3358604852','FR',NULL);
+INSERT INTO Client(idClient,nom,prenom,date_naissance,rue,ville,codeP,departement,pays,tel,region,email) VALUES ('CL006','Elisa','Pierro','02/05/1999','10 Place de Jaude','Clermont-Ferrand',63170,'Auvergne','France','+3376859725','FR',NULL);
 
 INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('26/05/2021','CL001','M0001','P0010');
 INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('20/01/2021',3,'CL002','M0002','P0001');
 INSERT INTO Achete(date_achat,quantite,client,magasin,produit) VALUES ('26/05/2021',2,'CL003','M0003','P0002');
 INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('01/12/2021','CL004','M0004','P0015');
+INSERT INTO Achete(date_achat,client,magasin,produit) VALUES ('01/12/2021','CL006','M0003','P0020');
 
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO99',10000,'16 Rue maurice de vlaminck','Paris','75000','France');
 INSERT INTO Entrepot(idEntrepot,capacite,rue,ville,codeP,pays) VALUES ('STO88',5000,'09 Rue Charles de gaules','Paris','75000','France');

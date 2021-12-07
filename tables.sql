@@ -44,7 +44,9 @@ CREATE TABLE Client(
 	rue 				varchar(30),
 	ville				varchar(40),
 	codeP				numeric(5),
-	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP) IS NULL)),
+	departement			varchar(30),
+	pays 				varchar(42) NOT NULL CONSTRAINT ck_pays CHECK (NOT(pays ='France' AND (rue,ville,codeP,departement) IS NULL)),
+	region				varchar(6) NOT NULL CONSTRAINT ck_reg CHECK (region IN('UE','horsUE','FR')),
 	tel 				varchar UNIQUE NOT NULL,
 	email				varchar(45) UNIQUE
 );
@@ -70,7 +72,7 @@ CREATE TABLE Entrepot(
 );
 
 CREATE TABLE Existe(
-	quantite			numeric(5) NOT NULL CONSTRAINT ck_qtte CHECK (quantite >0),
+	quantite			numeric(5) NOT NULL CONSTRAINT ck_qtte CHECK (quantite >=0),
 	produit				char(5),
 	entrepot			char(5),
 	CONSTRAINT fk_prod_ex FOREIGN KEY (produit) REFERENCES Produit(idProduit),
